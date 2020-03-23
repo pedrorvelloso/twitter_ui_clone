@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:twitter_clone/models/tweet_model.dart';
+import 'package:twitter_clone/screens/new_tweet_screen.dart';
 import 'package:twitter_clone/widgets/tweet_display_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -63,6 +64,19 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             );
           }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => NewTweetScreen(),
+            )),
+        backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.white,
+        child: Icon(
+          FontAwesomeIcons.feather,
+          size: 18.0,
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         type: BottomNavigationBarType.fixed,
